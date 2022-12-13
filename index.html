@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    #short_para{
+        font-family: 'Courier New', Courier, monospace;
+        background: url(data:image/jpeg;base64,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) ;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: white;
+        font-size: 1.2em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #cards{
+      display: flex;
+      float: bottom;
+      margin-left: 10px;
+      gap: 10px;
+      
+    }
+    .card{
+      margin-top: 10px;
+    }
+    #backnav{
+              background: url(data:image/jpeg;base64,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) ;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    #searchBtn{
+      border: 1px solid white;
+      color: white;
+    }
+    #searchBtn:hover{
+      background-color: transparent;
+    }
+    #menuItem:hover{
+      background: transparent;
+      border: 1px solid white;
+    }
+  </style>
+  </head>
+<body>
+  <div id="maindiv">
+    <div id="navbar">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div  id="backnav" class="container-fluid">
+          <a class="navbar-brand" href="#"><img width="50px" src="./images/logo.jpg" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a style="color: white;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Our Services
+                </a>
+                <ul id="backnav" class="dropdown-menu">
+                  <li><a style="color: white;" id="menuItem" class="dropdown-item" href="./pages/veg.html">Veg</a></li>
+                  <li><a style="color: white;" id="menuItem" class="dropdown-item" href="./pages/non-veg.html">Non-Veg</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link disabled">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="searchBtn" class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- slider -->
+    <div id="slider">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/slid21.jpg" height="350px" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/slide.2" height="350px" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/slide.3" height="350px" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="short_para">
+      <marquee>
+        <p style="margin-top: 15px;">Hello My new Custombers How are you... <b>This is our Menu Items Kindly Check this and place order 
+          for your Delicious Meal.....
+        </b></p>
+      </marquee>
+    </div>
+    <!-- CArds -->
+    <div class="container text-center">
+      <div class="row">
+        <!-- Card1 -->
+        <div class="col">
+          <div id="card1">
+            <div class="card" style="width: 18rem;">
+              <img src="./images/card1.webp" height="140px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Paratha</h5>
+                <p class="card-text">Simple paratha made of wheat flour</p>
+                <h3>Price: 50</h3>
+                <a  href="#" class="btn btn-primary">Order Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card2 -->
+        <div class="col">
+          <div id="card2">
+            <div class="card" style="width: 18rem;">
+              <img src="./images/card2.jpg" height="140px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Paratha</h5>
+                <p class="card-text">Paratha of wheat flour & Ckicken</p>
+                <h3>Price: 200</h3>
+                <a href="#" class="btn btn-primary">Order Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card3 -->
+        <div class="col">
+          <div id="card3">
+            <div class="card" style="width: 18rem;">
+              <img src="./images/card3.jpg" height="140px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Aloo Paratha</h5>
+                <p class="card-text">Paratha of Aloo/Potato</p>
+                <h3>Price: 150</h3>
+                <a href="#" class="btn btn-primary">Order Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card4 -->
+        <div class="col">            
+          <div id="card4">
+          <div class="card" style="width: 18rem;">
+            <img src="./images/card4.jpg" height="140px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Roti Chapatti</h5>
+              <p class="card-text">Roti made of wheat flour</p>
+              <h3>Price: 20</h3>
+              <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+              <!-- Card5 -->
+              <div class="col">            
+                <div id="card5">
+                  <div id="card5">
+                    <div class="card" style="width: 18rem;">
+                      <img src="./images/card5.jpg" height="140px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Poori Paratha</h5>
+                        <p class="card-text">Taste in every bite</p>
+                        <h3>Price: 50</h3>
+                        <a href="#" class="btn btn-primary">Order Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+            </div>
+                    <!-- Card6 -->
+        <div class="col">            
+          <div id="card6">
+          <div class="card" style="width: 18rem;">
+            <img src="./images/card6.jpg" height="140px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Pizza Paratha</h5>
+              <p class="card-text">Taste in every bite</p>
+              <h3>Price: 150</h3>
+              <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card7 -->
+      <div class="col">            
+        <div id="card7">
+        <div class="card" style="width: 18rem;">
+          <img src="./images/card7.cms" height="140px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Fresh Naan</h5>
+            <p class="card-text">Taste in every biteur</p>
+            <h3>Price: 20</h3>
+            <a href="#" class="btn btn-primary">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- card8 -->
+    <div class="col">            
+      <div id="card8">
+      <div class="card" style="width: 18rem;">
+        <img src="./images/card8.jpg" height="140px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Garlic Naan</h5>
+          <p class="card-text">Taste in every bite</p>
+          <h3>Price: 30</h3>
+          <a href="#" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- card9 -->
+  <div class="col">            
+    <div id="card9">
+    <div class="card" style="width: 18rem;">
+      <img src="./images/card9.jpeg" height="140px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Roghni Naan</h5>
+        <p class="card-text">Taste in every bite</p>
+        <h3>Price: 50</h3>
+        <a href="#" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- card10 -->
+<div class="col">            
+  <div id="card10">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card10.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Ice Cream</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 150</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card11 -->
+<div class="col">            
+  <div id="card11">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card11.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Falooda</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 250</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card12 -->
+<div class="col">            
+  <div id="card12">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card12.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Leemon Soda</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 100</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card13 -->
+<div class="col">            
+  <div id="card13">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card13.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mix Fruit Juice</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 250</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card14 -->
+<div class="col">            
+  <div id="card14">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card14.webp" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Cold Coffe</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 220</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card15 -->
+<div class="col">            
+  <div id="card15">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card15.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chocolate Icec-ream</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 200 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card16 -->
+<div class="col">            
+  <div id="card16">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card16.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Badam Halwa</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 1500 (1kg) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card17 -->
+<div class="col">            
+  <div id="card13">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card17.webp" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Gulab-Jamun</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 800 (1kg) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card18 -->
+<div class="col">            
+  <div id="card13">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card18.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Rusgulle</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 1000 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card19 -->
+<div class="col">            
+  <div id="card19">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card19.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Roll</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 180 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card20 -->
+<div class="col">            
+  <div id="card20">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card20.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Shahi-Paneer Roll</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 170 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card21 -->
+<div class="col">            
+  <div id="card21">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card21.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Achar Roll</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 150</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card22 -->
+<div class="col">            
+  <div id="card22">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card22.webp" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Aloo Pulao</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 300 (Half)</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card23 -->
+<div class="col">            
+  <div id="card23">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card23.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Pulao</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 400 (Half)</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card24 -->
+<div class="col">            
+  <div id="card21">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card24.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mutton Pulao</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 800 (Half)</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card25 -->
+<div class="col">            
+  <div id="card25">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card25.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Crispy Broast </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 400 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card26 -->
+<div class="col">            
+  <div id="card26">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card26.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Zinger Burger </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 280 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card27 -->
+<div class="col">            
+  <div id="card27">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card27.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Paneer Sandwich </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 330 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card28 -->
+<div class="col">            
+  <div id="card28">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card28.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Masala Fries </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 170 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card29 -->
+<div class="col">            
+  <div id="card29">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card29.webp" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Burger </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 350 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card30 -->
+<div class="col">            
+  <div id="card30">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card30.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Vegetable Sandwich</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 250 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card31 -->
+<div class="col">            
+  <div id="card31">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card31.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Tikka</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 320 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card32 -->
+<div class="col">            
+  <div id="card32">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card32.jpeg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Green </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 400 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card33 -->
+<div class="col">            
+  <div id="card33">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card33.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Fish Bar B Q </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 650 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card34 -->
+<div class="col">            
+  <div id="card34">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card34.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Fish Tikka Grid </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 450 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- CARD35 -->
+<div class="col">            
+  <div id="card35">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card35.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Gola Kabab </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 450 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card36 -->
+<div class="col">            
+  <div id="card36">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card36.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Malai Boti</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 400 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card37 -->
+<div class="col">            
+  <div id="card37">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card37.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Finger Fish </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 700 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card38 -->
+<div class="col">            
+  <div id="card38">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card38.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Paneer Masala </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 700 (Half) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card39 -->
+<div class="col">            
+  <div id="card39">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card39.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Palak Paneer</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 600 (Half) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card40 -->
+<div class="col">            
+  <div id="card40">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card40.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dal Makhni </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 500 (Half) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card41 -->
+<div class="col">            
+  <div id="card41">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card41.jpeg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dal Achariya</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 500 (Half)</h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card42 -->
+<div class="col">            
+  <div id="card42">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card42.webp" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Indian Thali </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 500 </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card43 -->
+<div class="col">            
+  <div id="card43">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card43.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Paneer White</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 700 (Half) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card44 -->
+<div class="col">            
+  <div id="card44">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card44.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Aloo Bhindi </h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 400 (Half) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- card45 -->
+<div class="col">            
+  <div id="card45">
+  <div class="card" style="width: 18rem;">
+    <img src="./images/card45.jpg" height="140px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Aloo Matar</h5>
+      <p class="card-text">Taste in every bite</p>
+      <h3>Price: 300 (Half) </h3>
+      <a href="#" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- footer -->
+<div style="margin-top: 2%;" id="footer">
+  <footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: hsla(0, 31%, 58%, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">diamondfoods.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>
+      </div>
+      </div>
+  </div>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</html>
